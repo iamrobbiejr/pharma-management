@@ -15,11 +15,11 @@
                         <div class="col-12">
                             <div class="form-group">
                                 <label>Product <span class="text-danger">*</span></label>
-                                <select class="select2 form-select form-control" name="product"> 
+                                <select class="select2 form-select form-control" name="product">
                                     @foreach (\App\Models\Product::get() as $product)
                                         @if (!empty($product->purchase))
                                             @if (!($product->purchase->quantity <= 0))
-                                                <option value="{{$product->id}}">{{$product->purchase->product}}</option>
+                                                <option value="{{$product->id}}">{{$product->purchase->product}} - ${{$product->price}}</option>
                                             @endif
                                         @endif
                                     @endforeach

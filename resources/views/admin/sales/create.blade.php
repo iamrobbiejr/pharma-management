@@ -2,7 +2,7 @@
 
 
 @push('page-css')
-    
+
 @endpush
 
 @push('page-header')
@@ -27,12 +27,12 @@
 						<div class="col-12">
 							<div class="form-group">
 								<label>Product <span class="text-danger">*</span></label>
-								<select class="select2 form-select form-control" name="product"> 
+								<select class="select2 form-select form-control" name="product">
 									@foreach ($products as $product)
 										@if (!empty($product->purchase))
 											@if (!($product->purchase->quantity <= 0))
                                                 <option disabled selected > Select Product</option>
-												<option value="{{$product->id}}">{{$product->purchase->product}}</option>
+												<option value="{{$product->id}}">{{$product->purchase->product}} - ${{$product->price}}</option>
 											@endif
 										@endif
 									@endforeach
@@ -46,16 +46,16 @@
 							</div>
 						</div>
 					</div>
-					<button type="submit" class="btn btn-primary btn-block">Save Changes</button>
+					<button type="submit" class="btn btn-primary btn-block mt-5">Save Changes</button>
 				</form>
                 <!--/ Create Sale -->
 			</div>
 		</div>
-	</div>			
+	</div>
 </div>
-@endsection	
+@endsection
 
 
 @push('page-js')
-    
+
 @endpush
